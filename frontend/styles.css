@@ -130,13 +130,14 @@ body::after {
     position: relative;
     text-align: center;
     margin-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-md);
     animation: fadeInDown 0.6s ease;
 }
 
 .header-nav {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -20px;
+    left: -10px;
 }
 
 .home-link {
