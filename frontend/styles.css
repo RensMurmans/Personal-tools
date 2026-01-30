@@ -127,9 +127,38 @@ body::after {
    ============================================ */
 
 .header {
+    position: relative;
     text-align: center;
     margin-bottom: var(--spacing-xl);
     animation: fadeInDown 0.6s ease;
+}
+
+.header-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.home-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.home-icon {
+    font-size: 1.25rem;
 }
 
 @keyframes fadeInDown {
