@@ -263,13 +263,11 @@ body::after {
 }
 
 .tool-card-placeholder:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: var(--border-color);
+    transform: scale(1.02);
 }
 
-.tool-card-placeholder:hover::before {
-    opacity: 0;
+.tool-card-placeholder::before {
+    opacity: 0 !important;
 }
 
 /* Tool Icon */
@@ -320,6 +318,53 @@ body::after {
     font-size: 3rem;
     color: var(--text-tertiary);
     font-weight: 300;
+}
+
+/* Lightning Icon for Coming Soon */
+.lightning-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--text-tertiary);
+    transition: all var(--transition-base);
+}
+
+/* Lightning animation on hover */
+@keyframes lightningFlash {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 transparent);
+        stroke: var(--text-tertiary);
+    }
+    10% {
+        filter: drop-shadow(0 0 5px var(--accent-primary)) drop-shadow(0 0 10px var(--accent-primary)) drop-shadow(0 0 20px var(--accent-primary));
+        stroke: var(--accent-primary);
+    }
+    20% {
+        filter: drop-shadow(0 0 0 transparent);
+        stroke: var(--text-tertiary);
+    }
+    30% {
+        filter: drop-shadow(0 0 8px var(--accent-primary)) drop-shadow(0 0 16px var(--accent-primary)) drop-shadow(0 0 32px var(--accent-secondary));
+        stroke: var(--accent-primary);
+    }
+    40%, 100% {
+        filter: drop-shadow(0 0 0 transparent);
+        stroke: var(--text-tertiary);
+    }
+}
+
+.tool-card-placeholder:hover .lightning-icon {
+    animation: lightningFlash 1s ease-in-out infinite;
+    transform: scale(1.1);
+}
+
+.tool-card-placeholder:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.tool-card-placeholder:hover::before {
+    opacity: 0;
 }
 
 /* Tool Info */
